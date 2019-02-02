@@ -1,5 +1,7 @@
 class Jankyset:
 	def __init__(self, some_iterator):
+		#Interestingly, the CPython implementation does something similar (but much MUCH smarter than this): https://hg.python.org/releasing/3.6/file/tip/Objects/setobject.c
+		#Whereas the OpenJDK just backs a HashSet with a HashMap: https://zgrepcode.com/java/openjdk/10.0.2/java.base/java/util/hashset.java
 		self.number_of_buckets = 10 #this is the default number of buckets
 		self.buckets = [[] for _ in range(self.number_of_buckets)]
 		for x in some_iterator:
