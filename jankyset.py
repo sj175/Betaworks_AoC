@@ -16,7 +16,7 @@ class Jankyset:
 		self.buckets[self.hash(element)].append(element)
 
 	def __contains__(self, element):
-		return element in self.buckets[self.hash(element)] #this is why contains is actually O(n) in the worst case.
+		return element in self.buckets[self.hash(element)] #this is why contains is actually O(n) in the worst case. If each bucket were a binary search tree we could get this down to O(log n)
 
 
 	def __eq__(self, other):
